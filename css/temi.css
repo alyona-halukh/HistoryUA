@@ -1,0 +1,110 @@
+body {
+    /* Шлях до твоєї картинки */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.171), rgba(0, 0, 0, 0.219)), url('../img/paper-texture-top-view.jpg') ; 
+    
+    /* Фіксує фон, щоб він не рухався при скролі (створює ефект глибини) */
+    background-attachment: fixed; 
+    
+    /* Розтягує картинку на всю ширину та висоту екрана */
+    background-size: cover; 
+    
+    /* Центрує зображення */
+    background-position: center; 
+    
+    /* Забороняє повторення картинки, якщо вона маленька */
+    background-repeat: no-repeat; 
+    
+    /* Додаємо колір-запас на випадок, якщо картинка довго вантажиться */
+    /* background-color: #f4ecd8;  */
+    
+}
+
+/* Якщо контент погано читається на фоні, додамо йому легку підкладку */
+
+
+
+
+/* Загальний контейнер */
+.content-section {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Головна картинка */
+.main-banner {
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.main-img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    object-fit: cover;
+}
+
+/* Сітка з посиланнями */
+.links-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 25px;
+}
+
+.link-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.link-wrapper:hover {
+    transform: translateY(-5px);
+}
+
+.link-wrapper img {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Робить картинки квадратними */
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    border: 1px solid #ddd;
+}
+
+.link-text {
+    font-family: sans-serif;
+    color: #000000;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.link-wrapper:hover .link-text {
+    color: #ffee00; /* Колір при наведенні */
+}
+
+/* АДАПТИВНІСТЬ */
+
+/* Планшети (до 992px) */
+@media (max-width: 992px) {
+    .links-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 колонки в ряд */
+    }
+}
+
+/* Телефони (до 576px) */
+@media (max-width: 576px) {
+    .links-grid {
+        grid-template-columns: 1fr; /* 1 колонка в ряд */
+        gap: 30px;
+    }
+    .link-wrapper img {
+        width: 90%;
+    }
+    .content-section {
+        margin: 20px auto;
+    }
+}
